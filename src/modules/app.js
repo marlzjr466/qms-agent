@@ -5,7 +5,8 @@ export default () => ({
   name: 'app',
 
   metaStates: {
-    mode: 'light'
+    mode: 'light',
+    user: null
   },
 
   metaMutations: {

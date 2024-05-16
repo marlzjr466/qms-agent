@@ -76,7 +76,7 @@ ul, ol {
   background: #000;
 }
 
-.container, .theme-default {
+.container, .dark__agent-container, .dark__login-container, .light__agent-container, .light__login-container, .theme-default {
   width: 100%;
   height: 100%;
 }
@@ -148,4 +148,11 @@ ul, ol {
     opacity: 1;
     transform: scaleX(1);
   }
+}
+.light__agent-container {
+  background: #DBDBDB;
+}
+
+.dark__agent-container {
+  background: #2C2C2C;
 }/*# sourceMappingURL=style.css.map */

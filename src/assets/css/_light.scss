@@ -1,0 +1,13 @@
+$bg: #DBDBDB;
+
+.light {
+  &__login-container {
+    @extend .container;
+  }
+  
+  &__agent-container {
+    @extend .container;
+  
+    background: $bg;
+  }
+}

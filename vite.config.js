@@ -13,7 +13,8 @@ export default defineConfig({
         '@assets': fileURLToPath(new URL('./src/assets', import.meta.url)),
         '@utilities': fileURLToPath(new URL('./src/utilities', import.meta.url)),
         '@modals': fileURLToPath(new URL('./src/modals', import.meta.url)),
-        '@constants': fileURLToPath(new URL('./src/constants', import.meta.url))
+        '@constants': fileURLToPath(new URL('./src/constants', import.meta.url)),
+        '@package': fileURLToPath(new URL('./src/package', import.meta.url))
     },
   }
 })

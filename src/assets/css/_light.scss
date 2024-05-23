@@ -1,13 +1,19 @@
-$bg: #DBDBDB;
+:root {
+  --bg: #DBDBDB;
+  --border-color: rgba(0,0,0,.1);
 
-.light {
-  &__login-container {
-    @extend .container;
-  }
-  
-  &__agent-container {
-    @extend .container;
-  
-    background: $bg;
-  }
+  // nav
+  --nav-bg: #26272F;
+  --nav-text-color: #fff;
+  --nav-date-color: #ffbf6a;
+
+  // tickets
+  --ticket-bg: #fff;
+  --tickets-total-bg: rgba(0,0,0,.1);
+  --ticket-color: #11335a;
+  --ticket-label-color: rgba(0,0,0,.5);
+
+  // body
+  --body-bg: #fff;
+  --body-name-color: rgba(0,0,0,.5);
 }

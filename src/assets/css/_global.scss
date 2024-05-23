@@ -103,11 +103,6 @@ ul, ol {
   height: 100%;
 }
 
-.full-size {
-  height: 100%;
-  width: 100%;
-}
-
 .font-family-bold {
   font-family: Technica_Semi_Bold;
 }
@@ -118,4 +113,24 @@ ul, ol {
 
 .bold {
   font-weight: 600;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #c0c0c0; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #949494; 
 }

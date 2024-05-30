@@ -1,0 +1,117 @@
+.login-container {
+  @extend .flex;
+  @extend .flex-column;
+
+  gap: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--login-body-bg);
+  width: 400px;
+  border-radius: 10px;
+  padding: 20px;
+
+  &__title {
+    @extend .full-width;
+    @extend .font-family-bold;
+
+    color: var(--login-label-color);
+    text-align: center;
+    font-size: 22px;
+  }
+
+  &__label {
+    @extend .full-width;
+
+    color: var(--login-label-color);
+    font-size: 13px;
+    margin-top: 30px;
+  }
+
+  &__list {
+    overflow: auto;
+    max-height: 200px;
+    gap: 5px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 5px;
+
+    li {
+      height: 60px;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid var(--login-panel-bg);
+      border-radius: 5px;
+      position: relative;
+      box-shadow: 3px 3px 5px rgba(0,0,0,.05);
+      cursor: pointer;
+
+      &:last-child:nth-child(odd) {
+        grid-column: 1/-1;
+      }
+
+      &:before {
+        @extend .font-family-bold;
+
+        content: attr(counter-name);
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: var(--login-label-color);
+      }
+
+      &:after {
+        @extend .font-family-bold;
+
+        content: attr(counter-value);
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 30px;
+        text-transform: uppercase;
+        color: var(--ticket-color);
+        opacity: .8;
+      }
+
+      &.selected {
+        border: 2px solid var(--login-selected);
+        box-shadow: 1px 1px 3px var(--login-selected);
+      }
+
+      &.disabled {
+        opacity: .5;
+        cursor: no-drop;
+      }
+    }
+  }
+
+  &__btn {
+    @extend .full-width;
+    @extend .font-family-bold;
+
+    height: 50px;
+    font-size: 15px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    color: #fff;
+    cursor: pointer;
+    background: #2AB797;
+
+    &:hover {
+      background: #20A789;
+    }
+
+    &.disabled {
+      opacity: .5;
+      cursor: no-drop;
+      background: #20A789;
+
+      &:hover {
+        background: #20A789;
+      }
+    }
+  }
+}

@@ -13,11 +13,15 @@ import socket from '@utilities/socket.js'
 
 // modules
 import app from '@modules/app'
+import login from '@modules/login'
 
 // init redux meta globally
 const reduxMeta = new ReduxMeta()
 window.$reduxMeta = reduxMeta
-window.$reduxMeta.useModules(app())
+window.$reduxMeta.useModules([
+  app(),
+  login()
+])
 
 // init socket globally
 window.$socket = socket

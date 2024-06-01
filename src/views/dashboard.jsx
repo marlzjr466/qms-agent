@@ -2,7 +2,7 @@
 import { useEffect } from 'react'
 
 // utilities
-import { formatQueueNumber, getDate } from '@utilities/helper'
+import { formatQueueNumber, getDate, sleep } from '@utilities/helper'
 import socket from '@utilities/socket'
 import swal from '@utilities/swal'
 
@@ -128,8 +128,8 @@ function Dashboard () {
         return
       }
       
-      await meta.getAvailCounter()
-      if (!meta.availCounters.length) {
+      const data = await meta.getAvailCounter()
+      if (!data.length) {
         return swal.warning({
           title: 'Transfer not allowed',
           text: 'No available counter.'
@@ -137,6 +137,8 @@ function Dashboard () {
       }
 
       meta.SET_SHOW_TRANSFER_MODAL(true)
+      await sleep(10000)
+      meta.SET_SHOW_TRANSFER_MODAL(false)
     } catch (error) {
       swal.error({ text: error.message })
     }
@@ -296,7 +298,7 @@ function Dashboard () {
                       transfer
 
                       {
-                        meta.showTransferModal
+                        meta.currentTicket && meta.showTransferModal
                           ? <div className="counter-list">
                             {
                               meta.availCounters.map((item, i) => {

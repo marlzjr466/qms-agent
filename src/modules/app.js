@@ -1,4 +1,5 @@
 import { baseApi } from '@utilities/axios'
+import socket from '@utilities/socket'
 
 export default () => ({
   metaModule: true,
@@ -199,6 +200,11 @@ export default () => ({
         })
 
         commit('SET_CURRENT_TICKET', res.data)
+
+        socket.emit('call-again', {
+          counter: rootState.login.user.id,
+          ticket: res.data.ticket
+        })
       } catch (error) {
         console.log('getTicket error:', error.message)
         throw error
@@ -267,8 +273,9 @@ export default () => ({
             ]
           }
         })
-
+        
         commit('SET_AVAIL_COUNTERS', res.data)
+        return res.data
       } catch (error) {
         console.log('getAvailCounter error:', error.message)
         throw error

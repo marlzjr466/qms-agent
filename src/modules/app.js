@@ -144,12 +144,20 @@ export default () => ({
       }
     },
 
-    async getInQueues ({ commit }) {
+    async getInQueues ({ commit, rootState }) {
       try {
         const res = await baseApi.post('/qms/queues/list', {
           filter: {
-            column: 'status',
-            value: 'waiting'
+            fields: [
+              {
+                column: 'serve_by',
+                value: rootState.login.user.id
+              },
+              {
+                column: 'status',
+                value: 'waiting'
+              }
+            ]
           }
         })
 

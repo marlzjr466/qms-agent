@@ -222,9 +222,9 @@ function Dashboard () {
             <div className="body__head--info">
               <div
                 className="body__head--info-item"
-                info-item-value={meta.user.id}
+                info-item-value={`C${meta.user.id}`}
               >
-                counter
+                {meta.user.name}
               </div>
 
               <div

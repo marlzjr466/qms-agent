@@ -294,9 +294,9 @@ ul, ol {
 .theme-default .login-container__list li:after {
   content: attr(counter-value);
   position: absolute;
-  top: 10px;
+  bottom: 10px;
   right: 10px;
-  font-size: 30px;
+  font-size: 12px;
   text-transform: uppercase;
   color: var(--ticket-color);
   opacity: 0.8;
@@ -466,7 +466,7 @@ ul, ol {
 }
 .theme-default .agent-container__content .body__head--info-item {
   height: 100%;
-  width: 200px;
+  width: 250px;
   padding: 0 5px;
   border: 1px solid var(--border-color);
   font-size: 13px;

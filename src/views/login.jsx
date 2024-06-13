@@ -91,8 +91,8 @@ function Login () {
                         ${ item.status ? 'disabled': '' }
                         ${ selected[i] ? 'selected': '' }
                       `}
-                      counter-name="counter"
-                      counter-value={item.id}
+                      counter-name={item.name}
+                      counter-value={`C-${item.id}`}
                       onClick={() => selectCounter(item, i)}
                     ></li>
                   )
